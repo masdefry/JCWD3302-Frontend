@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Intro to HTML</title>
+    <style>
+      table tr td {
+        border: 1px solid salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        Heading Tags: Untuk menuliskan judul/title
+    -->
+    <h1>Purwadhika</h1>
+    <h2>Purwadhika</h2>
+    <h3>Purwadhika</h3>
+    <h4>Purwadhika</h4>
+    <h5>Purwadhika</h5>
+    <h6>Purwadhika</h6>
+
+    <!-- 
+        Paragraph & Break
+    -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ducimus
+      nihil nulla officiis odit similique reiciendis quod ipsam, facere vitae
+      voluptate illo ut ullam sequi exercitationem eveniet fuga cum dignissimos.
+    </p>
+    <br />
+
+    <!-- 
+        Text Formatting
+    -->
+    <b>bold</b>
+    <i>italic</i>
+    <u>underlined</u>
+    <del>deleted</del>
+    <mark>this is mark</mark>
+    2<sup>2</sup> O<sub>2</sub>
+
+    <!-- 
+        List: Unordered List & Ordered List
+    -->
+    <ol>
+      <li>Indonesia</li>
+      <li>Jepang</li>
+      <li>Arab</li>
+    </ol>
+
+    <ul>
+      <li>Apel</li>
+      <li>Mangga</li>
+      <li>Jeruk</li>
+    </ul>
+
+    <!-- 
+        Table:
+
+        <tr>: Membuat baris baru
+        <td>/<th>: Membuat kolom baru
+        <thead>: Membuat judul tabel
+        <tbody>: Membuat isi tabel
+        
+        colspan: Menggabungkan kolom (merge cells)
+        rowspan: Menggabungkan baris (merge cells)
+    -->
+
+    <table>
+      <thead>
+        <tr>
+          <td>No.</td>
+          <td>Fruit</td>
+          <td>Price</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Apel</td>
+          <td>30000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jeruk</td>
+          <td>20000</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Lore</td>
+          <td>40000</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td
+            colspan="2"
+            rowspan="2"
+          >
+            Anggur
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 
+        Anchor Tags
+    -->
+    <!-- Absolute Link -->
+    <a
+      href="https://www.google.com"
+      target="_blank"
+      >Google.com</a
+    >
+
+    <!-- Relative Link -->
+    <a href="./other.page.html">Other Page</a>
+
+    <!-- 
+        Images Tag
+    -->
+    <img
+      src="https://mongabay.co.id/wp-content/uploads/2023/06/kucing-rumahan-unsplash.jpeg"
+      width="100px"
+      height="100px"
+      alt="Gambar kucing"
+    /> 
+    <img
+      src="C:\Users\LENOVO\Downloads\carbon.png"
+      width="100px"
+      height="100px"
+      alt="Gambar kucing"
+    />
+
+    <!-- 
+        Figure & Caption Tag
+    -->
+    <figure>
+      <img
+        src="https://mongabay.co.id/wp-content/uploads/2023/06/kucing-rumahan-unsplash.jpeg"
+        width="100px"
+        height="100px"
+        alt="Gambar kucing"
+      />
+      <figcaption>Ini kucing lucu</figcaption>
+    </figure>
+
+    <!-- 
+        Semantic HTML -> SEO Friendly (Rules)
+    -->
+    <!-- 
+        Form & Input
+    -->
+    <form>
+        <input type="text" placeholder="Please insert here" /> <br />
+        <input type="password" placeholder="Please insert here" /><br />
+        <input type="number" placeholder="Please insert here" /><br />
+        <input type="checkbox" /> Married
+        <input type="checkbox" /> Single<br />
+        <input type="radio" /> Married
+        <input type="radio" /> Single<br />
+        <select>
+            <option>Macbook</option>
+            <option>Acer</option>
+            <option>Lenovo</option>
+        </select><br />
+        <textarea placeholder="Input anything"></textarea>
+        <input type="email" placeholder="Please insert here" required />
+        <input type="button" value="Submit" />
+        <button><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" width="10px" height="10px" />Login with Google</button>
+    </form>
+
+    <!-- 
+        Division Tag: Elemen Kosong (Pembungkus Section)
+    -->
+    <div>
+        <h1>Purwadhika</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro voluptatibus nam dolore odit. Eveniet, voluptas at autem dicta sed quas rerum, illo necessitatibus, assumenda aspernatur id! A praesentium necessitatibus tempora?</p>
+    </div>
+
+
+
+    <!-- 
+        Block Element   : w=100% & h=fit-content  
+        Inline Element  : w=fit-content & h=fit-content
+    -->
+    <h1 style="background-color: aqua;">
+        Purwadhika School
+    </h1>
+    <h1 style="background-color: aqua;">
+        Purwadhika School
+    </h1>
+    <span style="background-color: antiquewhite;">Purwadhika School</span>
+    <span>Purwadhika School</span>
+    <div style="background-color: beige;">Hello</div>
+    <div>Hello</div>
+    </>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>
