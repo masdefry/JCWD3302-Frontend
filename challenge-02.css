@@ -1,0 +1,28 @@
+body {
+  margin: 0px;
+}
+
+#container {
+  height: 50px;
+  background-color: antiquewhite;
+  /* display: flex -> flex-direction: row */
+  display: flex;
+  align-items: center;
+}
+
+#container > div:nth-child(3) {
+  margin-left: auto;
+}
+
+/* GRID */
+#container-01 {
+  height: 50px;
+  background-color: burlywood;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+#container-01 > div:nth-child(3) {
+  grid-column: 10;
+  margin: auto 0px auto auto;
+}

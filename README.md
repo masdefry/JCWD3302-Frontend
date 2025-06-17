@@ -25,3 +25,7 @@ untuk menentukan posisi elemen relatif terhadap elemen lain atau terhadap viewpo
     ✔️ Sticky
         ▪️Elemen berperilaku seperti relative sampai titik tertentu, lalu menjadi seperti fixed.
         ▪️Biasanya digunakan untuk navbar/header yang menempel saat scroll.
+
+📃 Media Query
+
+Media query memungkinkan desain web menjadi responsif, yaitu menyesuaikan tampilan halaman agar tetap optimal di berbagai ukuran dan jenis device (misalnya: handphone, tablet, laptop).
