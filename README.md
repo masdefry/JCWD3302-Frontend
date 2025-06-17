@@ -1,12 +1,27 @@
 Hello, Full Stack Students✌️!
 
-📃 CSS Unit Length
+Position dalam CSS adalah properti yang digunakan untuk menentukan bagaimana elemen HTML diposisikan di dalam halaman.
+Properti ini bekerja bersama dengan properti lain seperti top, right, bottom, dan left
+untuk menentukan posisi elemen relatif terhadap elemen lain atau terhadap viewport (layar).
 
-        ✔️ em
-            ▪️Relatif terhadap parent element.
-            ▪️`1em` berarti 100% dari size element parentnya.
-            ▪️Apabila element parentnya tidak memiliki size dalam satuan `px`, maka by default akan di kalikan dengan `16px`.
+    ✔️ Static (Default)
+        ▪️Elemen diposisikan secara normal sesuai urutan dokumen.
+        ▪️Tidak bisa digunakan bersamaan dengan props top, right, bottom, left.
 
-        ✔️ rem
-            ▪️Relatif terhadap root element.
-            ▪️`1rem` berarti 100% dari size elemen html (root).
+    ✔️ Relative
+        ▪️Elemen diposisikan relatif terhadap posisinya semula.
+        ▪️Ketika elemen relative berpindah, maka akan meninggalkan ruang kosong.
+        ▪️Bisa menggunakan props top, right, bottom, left.
+
+    ✔️ Absolute
+        ▪️Elemen diposisikan relatif terhadap elemen induk terdekat yang memiliki position selain static.
+        ▪️Jika tidak ada, maka relatif terhadap body atau html.
+        ▪️Ketika elemen absolute berpindah, maka ruang dari elemen absolute akan dianggap tidak ada oleh elemen lain atau akan meninggalkan ruang kosong.
+
+    ✔️ Fixed
+        ▪️Elemen diposisikan relatif terhadap viewport (layar).
+        ▪️Tidak bergeser saat halaman di-scroll.
+
+    ✔️ Sticky
+        ▪️Elemen berperilaku seperti relative sampai titik tertentu, lalu menjadi seperti fixed.
+        ▪️Biasanya digunakan untuk navbar/header yang menempel saat scroll.

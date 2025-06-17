@@ -1,0 +1,57 @@
+body {
+  background-color: gray;
+  height: 5000px;
+}
+
+#container-01 > div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+#container-01 > div:nth-child(1) {
+  background-color: blueviolet;
+  position: relative;
+  top: 50px;
+}
+
+#container-01 > div:nth-child(2) {
+  background-color: salmon;
+}
+
+#container-02 {
+  position: relative;
+  background-color: gray;
+}
+
+#container-02 > div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+#container-02 > div:nth-child(1) {
+  background-color: yellow;
+  position: absolute;
+  top: -100px;
+  right: 0px;
+}
+
+#container-02 > div:nth-child(2) {
+  background-color: green;
+  top: 50px;
+}
+
+#container-03 > div {
+  background-color: burlywood;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
+
+#container-04 {
+  background-color: purple;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+}
