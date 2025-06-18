@@ -1,0 +1,40 @@
+/* Mobile */
+body {
+  margin: 0px;
+}
+
+#container {
+  background-color: salmon;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 10px;
+}
+
+#container > p {
+  display: none;
+}
+
+#container > #signin {
+  margin-left: auto;
+  display: none;
+}
+
+#container > #hamburger-menu {
+  margin-left: auto;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 481px) {
+  #container > #hamburger-menu {
+    display: none;
+  }
+
+  #container > #signin {
+    display: block;
+  }
+
+  #container > p {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="Counter('-')">-</button>
+    <h1 id="counter">1</h1>
+    <button onclick="Counter('+')">+</button>
+  </body>
+  <script>
+    function Counter(operator) {
+      let counter = document.getElementById('counter').innerText;
+      if (operator === '+') {
+        counter++;
+      }else{
+        counter--;
+      }
+      document.getElementById('counter').innerText = counter;
+    }
+  </script>
+</html>
