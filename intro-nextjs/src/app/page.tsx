@@ -12,12 +12,19 @@ import Card from '@/features/home/components/Card';
 function HomePage() {
   return (
     <>
-      <h1>Belajar React/Next</h1>
-
       <div style={{ display: 'flex' }}>
-        <Card description='abc' icon="https://icons8.com" />
-        <Card description='bca' icon="" />
-        <Card description='def' icon="" />
+        <Card
+          description='abc'
+          icon='https://icons8.com'
+        />
+        <Card
+          description='bca'
+          icon=''
+        />
+        <Card
+          description='def'
+          icon=''
+        />
       </div>
     </>
   );
