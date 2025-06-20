@@ -1,8 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap');
 
-@theme{
-  --color-primary: #03A6A1;
-  --color-secondary: #FFE3BB;
+@theme {
+  --color-primary: #03a6a1;
+  --color-secondary: #ffe3bb;
+  --font-display: 'Savate', sans-serif;
 }
 
 :root {

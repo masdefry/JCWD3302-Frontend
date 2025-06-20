@@ -4,5 +4,5 @@ export interface ICardProps{
 }
 
 export interface New{
-    
+
 }

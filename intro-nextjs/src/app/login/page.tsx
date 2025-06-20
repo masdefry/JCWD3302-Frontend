@@ -4,8 +4,8 @@ import { CgMenuMotion } from 'react-icons/cg';
 export default function Page() {
   return (
     <>
-      <h1 className='bg-primary text-[100px] text-secondary border border-green-300'>
-        Hello
+      <h1 className='font-display bg-primary text-[100px] text-secondary border border-green-300'>
+        Whereas gags
       </h1>
 
       {/* FLEX */}
