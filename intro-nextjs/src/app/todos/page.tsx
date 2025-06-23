@@ -1,9 +1,10 @@
 'use client';
 import TodoList from '@/features/todos/components/TodoList';
 import { useRef, useState } from 'react';
+import { globalStore } from '@/zustand/global.store';
 
 export default function Home() {
- const [selectedTodo, setSelectedToto] = useState(null)
+  const [selectedTodo, setSelectedToto] = useState(null);
   const [todos, setTodos] = useState<any[]>([
     {
       activity: 'Makan',
@@ -26,7 +27,6 @@ export default function Home() {
       isDone: false,
     },
   ]);
-
   const inputTodo = useRef<HTMLInputElement>(null);
 
   const onCreateTodo = () => {
@@ -61,8 +61,11 @@ export default function Home() {
 
   const onUpdateTodoTobeInput = (index: number) => {
     setSelectedToto(index);
-  }
+  };
 
+  // >>> INI GLOBAL STORE
+  const counter = globalStore((state: any) => state.counter);
+  console.log(counter);
   return (
     <>
       <section
@@ -105,6 +108,7 @@ export default function Home() {
             })}
           </div>
         </div>
+        <h1>{counter}</h1>
       </section>
     </>
   );
