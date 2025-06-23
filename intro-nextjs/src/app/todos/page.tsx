@@ -3,20 +3,29 @@ import TodoList from '@/features/todos/components/TodoList';
 import { useRef, useState } from 'react';
 
 export default function Home() {
-  const [todos, setTodos] = useState([
+  const [todos, setTodos] = useState<any[]>([
     {
       activity: 'Makan',
       place: 'Meja',
+      isDone: false,
     },
     {
       activity: 'Minum',
       place: 'Meja',
+      isDone: false,
     },
     {
       activity: 'Nobar',
       place: 'Cafe',
+      isDone: false,
+    },
+    {
+      activity: 'Makan',
+      place: 'Meja',
+      isDone: false,
     },
   ]);
+
   const inputTodo = useRef<HTMLInputElement>(null);
 
   const onCreateTodo = () => {
@@ -26,9 +35,27 @@ export default function Home() {
     currentTodos.push({
       activity: inputTodo.current?.value,
       place: 'Dimanapun',
+      isDone: false,
     });
     setTodos(currentTodos);
-    console.log(todos);
+
+    /*
+        setTodos([
+        ...todos,
+        {
+            activity: inputTodo.current?.value,
+            place: 'Dimanapun',
+            isDone: false,
+        },
+        ]);
+    */
+  };
+
+  const onUpdateTodoTobeDone = (index: number) => {
+    const currentTodos = [...todos];
+    currentTodos[index].isDone = !currentTodos[index].isDone;
+
+    setTodos(currentTodos);
   };
 
   return (
@@ -63,6 +90,9 @@ export default function Home() {
                 <TodoList
                   key={index}
                   todo={item.activity}
+                  isDone={item.isDone}
+                  onUpdateTodoTobeDone={onUpdateTodoTobeDone}
+                  index={index}
                 />
               );
             })}
