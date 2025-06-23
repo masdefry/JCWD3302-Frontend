@@ -3,6 +3,7 @@ import TodoList from '@/features/todos/components/TodoList';
 import { useRef, useState } from 'react';
 
 export default function Home() {
+ const [selectedTodo, setSelectedToto] = useState(null)
   const [todos, setTodos] = useState<any[]>([
     {
       activity: 'Makan',
@@ -58,6 +59,10 @@ export default function Home() {
     setTodos(currentTodos);
   };
 
+  const onUpdateTodoTobeInput = (index: number) => {
+    setSelectedToto(index);
+  }
+
   return (
     <>
       <section
@@ -93,6 +98,8 @@ export default function Home() {
                   isDone={item.isDone}
                   onUpdateTodoTobeDone={onUpdateTodoTobeDone}
                   index={index}
+                  onUpdateTodoTobeInput={onUpdateTodoTobeInput}
+                  selectedTodo={selectedTodo}
                 />
               );
             })}
