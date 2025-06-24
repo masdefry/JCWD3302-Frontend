@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "backendless": "^7.4.6",
     "daisyui": "^5.0.43",
+    "formik": "^2.4.6",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-toastify": "^11.0.5",
+    "yup": "^1.6.1",
     "zustand": "^5.0.5"
   },
   "devDependencies": {
