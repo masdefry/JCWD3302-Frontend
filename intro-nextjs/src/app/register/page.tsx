@@ -4,8 +4,27 @@ import { TbLockPassword } from 'react-icons/tb';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { registerSchema } from '@/features/register/schemas/registerSchema';
+import axios from 'axios';
+import { IUsersAccount } from '@/features/register/types';
 
 export default function Page() {
+  const onRegisterAccount = async ({
+    email,
+    username,
+    password,
+    role,
+  }: IUsersAccount) => {
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/api/auth/register',
+        { email, username, password, role }
+      );
+      alert(response?.data?.message);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section className='flex flex-col items-center py-10'>
       <div className='w-96 flex flex-col items-center gap-3'>
@@ -21,7 +40,12 @@ export default function Page() {
           }}
           validationSchema={registerSchema}
           onSubmit={(values) => {
-            console.log(values);
+            onRegisterAccount({
+              email: values.email,
+              username: values.username,
+              password: values.password,
+              role: values.role,
+            });
           }}
         >
           <Form className='w-full flex flex-col gap-3'>
