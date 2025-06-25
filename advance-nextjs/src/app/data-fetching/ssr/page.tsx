@@ -9,9 +9,16 @@ export interface IGetProductsResponse {
 }
 
 const onGetProducts = async () => {
-  const response = await fetch('http://localhost:3000/api/products', {
-    cache: 'no-store',
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products`,
+    {
+      cache: 'no-store',
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('We couldn`t load the data');
+  }
 
   const products: IGetProductsResponse = await response.json(); // Convert response json > response js object
 
@@ -25,11 +32,14 @@ export default async function Page() {
       <h1 className='font-bold text-3xl'>Server Side Rendering (SSR)</h1>
       <ul>
         {products.map((product: TProducts, index: number) => {
-            return(
-                <li key={index}>{product?.name}</li>
-            )
+          return <li key={index}>{product?.name}</li>;
         })}
       </ul>
     </>
   );
 }
+
+
+
+// SSG/ISR -> Next.API
+// SSG/ISR -> Fetching pada saat build time -> npm run build (fetch failed) JSON SERVER (Fake API)
