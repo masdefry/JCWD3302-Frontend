@@ -34,6 +34,13 @@ export async function POST(req: NextRequest) {
       'UserAccount'
     ).find({ where: `email='${email}' AND password='${password}'` });
 
+    if (findUserByEmailAndPassword.length === 0) {
+      return NextResponse.json(
+        { message: 'Invalid email or password' },
+        { status: 404 }
+      );
+    }
+
     return NextResponse.json(
       {
         message: 'Get user by email and password successful',

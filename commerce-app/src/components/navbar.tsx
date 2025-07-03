@@ -1,6 +1,10 @@
+'use client';
 import { CgShoppingBag } from 'react-icons/cg';
 import { FaRegUser } from 'react-icons/fa';
+import useAuthStore from '@/store/useAuthStore';
+import Link from 'next/link';
 export default function Navbar() {
+  const { email } = useAuthStore();
   return (
     <>
       {/* Navbar */}
@@ -13,7 +17,13 @@ export default function Navbar() {
           </div>
           <div className='ml-auto flex gap-3'>
             <CgShoppingBag className='p-2 text-3xl text-white bg-yellow-500 rounded-full' />
-            <FaRegUser className='p-2 text-3xl text-white bg-yellow-500 rounded-full' />
+            {email ? (
+              <p className='text-white'>{email}</p>
+            ) : (
+              <Link href='/login'>
+                <FaRegUser className='p-2 text-3xl text-white bg-yellow-500 rounded-full' />
+              </Link>
+            )}
           </div>
         </section>
         {/* Section-Bottom */}

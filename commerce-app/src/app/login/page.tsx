@@ -2,12 +2,15 @@
 import { loginSchema } from '@/features/login/schemas/loginSchema';
 import { IUsersAccount } from '@/features/types';
 import { axiosInstance } from '@/utils/axiosInstance';
+import { AxiosError } from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
+import useAuthStore from '@/store/useAuthStore';
 
 export default function Page() {
   const [isAuthLoginProccess, setIsAuthLoginProcess] = useState<boolean>(false);
-
+  const {setAuthStore} = useAuthStore();
   const onAuthLogin = async ({
     email,
     password,
@@ -18,9 +21,11 @@ export default function Page() {
         email,
         password,
       });
-      console.log(response);
+      setAuthStore(response?.data?.user[0]?.email);
+      toast.success(response?.data?.message);
     } catch (error) {
-      console.log(error);
+      const err = error as AxiosError<{ message: string }>;
+      toast.error(err?.response?.data?.message);
     } finally {
       setIsAuthLoginProcess(false);
     }
