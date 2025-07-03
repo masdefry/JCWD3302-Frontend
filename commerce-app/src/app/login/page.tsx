@@ -1,6 +1,31 @@
+'use client';
+import { loginSchema } from '@/features/login/schemas/loginSchema';
+import { IUsersAccount } from '@/features/types';
+import { axiosInstance } from '@/utils/axiosInstance';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useState } from 'react';
 
 export default function Page() {
+  const [isAuthLoginProccess, setIsAuthLoginProcess] = useState<boolean>(false);
+
+  const onAuthLogin = async ({
+    email,
+    password,
+  }: Pick<IUsersAccount, 'email' | 'password'>) => {
+    try {
+      setIsAuthLoginProcess(true);
+      const response = await axiosInstance.post('api/auth/login', {
+        email,
+        password,
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsAuthLoginProcess(false);
+    }
+  };
+
   return (
     <>
       <div className='grid grid-cols-2 bg-gray-100 min-h-screen'>
@@ -11,8 +36,13 @@ export default function Page() {
               email: '',
               password: '',
             }}
-            validationSchema={}
-            onSubmit={}
+            validationSchema={loginSchema}
+            onSubmit={(values) => {
+              onAuthLogin({
+                email: values?.email,
+                password: values?.password,
+              });
+            }}
           >
             <Form>
               <fieldset className='fieldset w-full'>
@@ -32,7 +62,7 @@ export default function Page() {
               <fieldset className='fieldset w-full'>
                 <legend className='fieldset-legend'>Password</legend>
                 <Field
-                  type='text'
+                  type='password'
                   name='password'
                   className='input w-full'
                   placeholder='Type here'
@@ -43,8 +73,11 @@ export default function Page() {
                   className='label text-red-400'
                 />
               </fieldset>
-              <button className='btn bg-black text-white w-full mt-3'>
-                Sign in
+              <button
+                disabled={isAuthLoginProccess}
+                className='btn bg-black text-white w-full mt-3'
+              >
+                {isAuthLoginProccess ? 'Please wait...' : 'Sign in'}
               </button>
             </Form>
           </Formik>
