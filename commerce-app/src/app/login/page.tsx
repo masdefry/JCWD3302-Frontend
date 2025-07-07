@@ -21,7 +21,8 @@ export default function Page() {
         email,
         password,
       });
-      setAuthStore(response?.data?.user[0]?.email);
+   
+      setAuthStore({objectId: response?.data?.user[0]?.objectId, email: response?.data?.user[0]?.email});
       toast.success(response?.data?.message);
     } catch (error) {
       const err = error as AxiosError<{ message: string }>;
