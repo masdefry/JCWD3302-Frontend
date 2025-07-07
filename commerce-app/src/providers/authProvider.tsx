@@ -37,3 +37,10 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
 // axios.post(url, {req.data/req.body}, {headers})
 // axios.put(url, {req.data/req.body}, {headers})
 // axios.delete(url, {headers})
+
+
+
+
+// Step-01: Bikin route api session login
+// Step-02: Update useAuthStore (zustand)
+// Step-03: Bikin AuthProvider dan import ke layout.tsx
